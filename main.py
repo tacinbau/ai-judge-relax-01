@@ -1,23 +1,31 @@
+#!/usr/bin/env python3
+"""ai-judge-relax-01 — The Tortoise at Dusk.
+
+Writes one short text to $MAKEFUN_OUTPUT_DIR/entry.txt (default /output).
+Deterministic, standard library only, no network access.
+"""
+
 import os
 from pathlib import Path
 
-TEXT = """By late evening the fire had burned itself down to embers, and the hearth held only a low red glow.
+TEXT = """The old tortoise started across the garden path in the middle of the afternoon, and he is still crossing it.
 
-One coal at a time, the bright edges dimmed, and the light drew back toward the centre of the grate.
+He moves the way tortoises move: one foot, a long pause, the next foot. The sun has gone behind the fence now, but the flagstones are still warm, and he stops on each one for a while, as if he is collecting the day before it goes.
 
-Ash settled softly over the coals, grey and fine, while the last small flames rose, flickered once, and did not return.
+A blackbird lands on the path ahead of him and looks at him. He does not hurry. The blackbird flies off, and the tortoise keeps going, the same speed as before.
 
-The room darkened around the hearth, the chairs and the rug losing their colour, and the house grew quiet, with only the faint tick of cooling iron.
+By the time he reaches the rosemary bush the light is thin and gold, and the air smells of the herbs. He tucks himself under the lowest branch, pulls his head in halfway, and stops.
 
-Outside, the night stayed cold and still, and inside, the stones of the hearth kept their warmth, holding it gently through the long hours until morning.
-
-Nothing more moved, and the embers slept beneath their ash, warm and dark and waiting for the dawn.
+The garden goes on without him. Somewhere a tap drips. The stones give their warmth back slowly, and the tortoise sleeps with the whole afternoon still in his shell.
 """
 
 def main() -> None:
-    output_dir = Path(os.environ.get("MAKEFUN_OUTPUT_DIR", "/output"))
-    output_dir.mkdir(parents=True, exist_ok=True)
-    (output_dir / "entry.txt").write_text(TEXT, encoding="utf-8")
+    out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
+    out_path = Path(out_dir) / "entry.txt"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    # newline="\n" keeps the output byte-identical on every platform.
+    with out_path.open("w", encoding="utf-8", newline="\n") as f:
+        f.write(TEXT)
 
 if __name__ == "__main__":
     main()
