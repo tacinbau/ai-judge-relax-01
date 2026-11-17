@@ -15,13 +15,13 @@ deterministic: the same bytes on every run, no network, no randomness.
 
 ## The text
 
-Nine short lines, second person, present tense. It settles the reader in
-one quiet evening scene, image by image: the day ending, rain on the roof,
-late light on a windowsill, a kettle gone still, steam thinning into the
-air, one unhurried breath, a house at rest. It describes rest rather than
-demanding it — no instructions, no questions, no stakes, no time pressure —
-and closes on the thought that the evening is long enough and rest is
-enough.
+Six short paragraphs, third person, present tense. It follows one slow
+scene to rest: a fire burned down to embers, each one breathing a little
+slower than the one before, the glow pulling back a little at a time, the
+house quiet enough to hear the fire settle, and the hearthstones still
+warm until morning. It describes rest rather than demanding it — no
+instructions, no questions, no stakes, no time pressure — and closes on
+warmth that outlasts the day.
 
 ## Run it
 
